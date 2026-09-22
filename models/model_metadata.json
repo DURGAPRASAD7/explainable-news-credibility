@@ -1,0 +1,51 @@
+{
+  "dataset": "welfake",
+  "rows": 63594,
+  "accuracy": 0.9628,
+  "confusion_matrix": [
+    [
+      6677,
+      281
+    ],
+    [
+      192,
+      5569
+    ]
+  ],
+  "classification_report": {
+    "Fake": {
+      "precision": 0.9720483330906974,
+      "recall": 0.9596148318482323,
+      "f1-score": 0.9657915672235481,
+      "support": 6958.0
+    },
+    "Real": {
+      "precision": 0.951965811965812,
+      "recall": 0.9666724526991841,
+      "f1-score": 0.9592627680647662,
+      "support": 5761.0
+    },
+    "accuracy": 0.9628115417878764,
+    "macro avg": {
+      "precision": 0.9620070725282547,
+      "recall": 0.9631436422737082,
+      "f1-score": 0.9625271676441571,
+      "support": 12719.0
+    },
+    "weighted avg": {
+      "precision": 0.962952067330774,
+      "recall": 0.9628115417878764,
+      "f1-score": 0.9628343841153051,
+      "support": 12719.0
+    }
+  },
+  "label_mapping": {
+    "0": "Fake",
+    "1": "Real"
+  },
+  "model": "TF-IDF + Logistic Regression",
+  "ngram_range": [
+    1,
+    2
+  ]
+}

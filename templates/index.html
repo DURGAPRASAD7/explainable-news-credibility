@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explainable News Credibility Analyzer</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<header class="hero">
+  <div class="container">
+    <p class="eyebrow">NLP + MACHINE LEARNING + EXPLAINABLE AI</p>
+    <h1>Explainable News Credibility Analyzer</h1>
+    <p class="subtitle">Analyze online news content and understand the textual patterns influencing the model prediction.</p>
+  </div>
+</header>
+
+<main class="container">
+  <section class="card input-card">
+    <h2>Analyze News</h2>
+
+    <label for="title">News Headline</label>
+    <input id="title" type="text" placeholder="Enter the news headline">
+
+    <label for="text">News Article</label>
+    <textarea id="text" rows="12" placeholder="Paste the complete news article here..."></textarea>
+
+    <div class="actions">
+      <button id="analyzeBtn">Analyze Content</button>
+      <button id="clearBtn" class="secondary">Clear</button>
+    </div>
+    <p id="status" class="status"></p>
+  </section>
+
+  <section id="result" class="hidden">
+    <div class="grid">
+      <div class="card result-card">
+        <h2>Credibility Assessment</h2>
+        <div id="credibility" class="big-result">—</div>
+        <div class="confidence-wrap">
+          <div class="bar"><div id="confidenceBar"></div></div>
+          <p>Model confidence: <strong id="confidence">—</strong></p>
+        </div>
+        <p>Prediction: <strong id="prediction">—</strong></p>
+      </div>
+
+      <div class="card">
+        <h2>Probability</h2>
+        <div class="prob-row"><span>Real-pattern</span><strong id="realProb">—</strong></div>
+        <div class="prob-row"><span>Fake-pattern</span><strong id="fakeProb">—</strong></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Why did the model predict this?</h2>
+      <p class="muted">These are textual features that contributed to the model decision; they are not independent proof of truth or falsity.</p>
+      <div class="explain-grid">
+        <div>
+          <h3>Terms supporting real-pattern</h3>
+          <ul id="realTerms"></ul>
+        </div>
+        <div>
+          <h3>Terms supporting fake-pattern</h3>
+          <ul id="fakeTerms"></ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Linguistic Indicators</h2>
+      <div id="linguistic" class="stats"></div>
+    </div>
+
+    <div class="notice" id="notice"></div>
+  </section>
+</main>
+
+<footer>
+  <p>Research prototype — NLP-based textual assessment, not a factual verification service.</p>
+</footer>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

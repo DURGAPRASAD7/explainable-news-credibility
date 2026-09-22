@@ -1,0 +1,75 @@
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f4f7fb;
+  color: #182230;
+}
+.container { width: min(1100px, 92%); margin: auto; }
+.hero {
+  padding: 55px 0;
+  background: #16213e;
+  color: white;
+}
+.eyebrow { font-size: 12px; letter-spacing: 2px; opacity: .8; }
+h1 { font-size: clamp(30px, 5vw, 52px); margin: 12px 0; }
+.subtitle { max-width: 750px; line-height: 1.7; opacity: .9; }
+main { padding: 35px 0 60px; }
+.card {
+  background: white;
+  border-radius: 18px;
+  padding: 25px;
+  margin-bottom: 22px;
+  box-shadow: 0 8px 25px rgba(0,0,0,.06);
+}
+label { display:block; font-weight:700; margin: 18px 0 8px; }
+input, textarea {
+  width:100%;
+  border:1px solid #d7dce5;
+  border-radius:10px;
+  padding:13px;
+  font-size:15px;
+  font-family:inherit;
+}
+textarea { resize: vertical; }
+.actions { display:flex; gap:12px; margin-top:18px; }
+button {
+  border:0;
+  border-radius:10px;
+  padding:13px 22px;
+  cursor:pointer;
+  font-weight:700;
+  background:#315efb;
+  color:white;
+}
+button.secondary { background:#e9edf5; color:#182230; }
+.grid, .explain-grid { display:grid; grid-template-columns:1fr 1fr; gap:22px; }
+.big-result { font-size:32px; font-weight:800; margin:25px 0; }
+.confidence-wrap { margin:15px 0; }
+.bar { height:12px; background:#e5e9f0; border-radius:20px; overflow:hidden; }
+#confidenceBar { height:100%; width:0%; background:#315efb; transition:width .5s; }
+.prob-row {
+  display:flex; justify-content:space-between;
+  padding:16px 0; border-bottom:1px solid #edf0f5;
+}
+li { margin:10px 0; }
+.stats { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; }
+.stat {
+  background:#f5f7fa; padding:18px; border-radius:12px;
+}
+.stat strong { display:block; font-size:22px; margin-top:6px; }
+.notice {
+  padding:16px;
+  border-radius:12px;
+  background:#fff8e6;
+  line-height:1.6;
+}
+.muted { color:#687386; line-height:1.6; }
+.hidden { display:none; }
+.status { min-height:20px; }
+.error { color:#b42318; }
+footer { text-align:center; padding:25px; color:#687386; }
+@media(max-width:750px) {
+  .grid, .explain-grid { grid-template-columns:1fr; }
+  .stats { grid-template-columns:1fr 1fr; }
+}

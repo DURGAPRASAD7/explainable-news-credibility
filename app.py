@@ -107,7 +107,7 @@ def model_info():
 @app.route("/api/analyze", methods=["POST"])
 def analyze():
     if model is None or vectorizer is None:
-        @app.routereturn jsonify({
+        return jsonify({
             "error": "Model not found. Run: python train_model.py"
         }), 503
 
